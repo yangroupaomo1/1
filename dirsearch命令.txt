@@ -1,0 +1,50 @@
+1、采用默认设置扫描目标url
+python dirsearch.py -u https://target
+
+2、使用文件拓展名为php,html,js的字典扫描目标url
+python dirsearch.py -e php,html,js -u https://target
+
+3、采用指定路径的wordlist且拓展名为php,html,js的字典扫描目标url
+python dirsearch.py -e php,html,js -u https://target -w /path/to/wordlist
+
+4、递归扫描
+python dirsearch.py -e php,html,js -u https://target -r
+
+5、设置递归层数为3
+python dirsearch.py -e php,html,js -u https://target -r -R 3
+
+6、指定线程(不建议线程数调整过大，可能会影响扫描的结果)
+python dirsearch.py -e php -u https://target --prefixes .,admin,_,~(前缀)
+
+7、使用前缀
+python dirsearch.py -e php -u https://target --prefixes .,admin,_,~(前缀)
+
+tools变为：
+1、.tools
+2、admintools
+3、_tools
+4、~tools
+
+8、使用后缀
+python dirsearch.py -e php -u https://target --suffixes ~,/(后缀)
+
+index.php变为：
+1、index.php~
+2、index.php/
+
+9、对文件拓展名的限制
+python dirsearch.py -e asp,aspx,htm,js -u https://target -X php,jsp,jspx
+
+admin
+admin.%EXT%
+index.html
+home.php
+test.jsp
+变为
+admin
+admin.asp
+admin.aspx
+admin.htm
+admin.js
+index.html
+
